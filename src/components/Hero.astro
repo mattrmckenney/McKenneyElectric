@@ -1,0 +1,78 @@
+---
+import Bolt from "./Bolt.astro";
+---
+
+<section id="top" class="relative overflow-hidden bg-ink text-cream">
+  <div class="pointer-events-none absolute -top-10 -right-10 h-64 w-40 rotate-12 text-volt/10 sm:h-96 sm:w-64">
+    <Bolt class="h-full w-full" />
+  </div>
+
+  <div class="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-2 md:items-center md:py-24">
+    <div>
+      <p class="font-body text-sm font-semibold tracking-[0.3em] text-volt uppercase">
+        Charlotte, NC &bull; Est. 1999
+      </p>
+
+      <h1 class="mt-4 font-display text-4xl leading-[0.95] uppercase sm:text-5xl lg:text-6xl">
+        Top-Quality
+      </h1>
+      <p class="font-script -mt-1 text-6xl text-volt sm:text-7xl lg:text-8xl">
+        Electrical
+      </p>
+      <h1 class="-mt-2 font-display text-4xl leading-[0.95] uppercase sm:text-5xl lg:text-6xl">
+        Service &amp; Repair
+      </h1>
+
+      <p class="mt-6 max-w-md font-body text-lg text-cream/80">
+        Quality work and affordable prices from a locally owned Charlotte
+        electrician. Installations, repairs, retrofits, and smart home
+        upgrades &mdash; done right the first time.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a
+          href="#contact"
+          class="rounded-sm bg-volt px-6 py-3 font-body text-base font-semibold tracking-wide text-ink uppercase transition-transform hover:-translate-y-0.5"
+        >
+          Get a Free Estimate
+        </a>
+        <a
+          href="tel:9802200908"
+          class="rounded-sm border-2 border-volt px-6 py-3 font-body text-base font-semibold tracking-wide text-volt uppercase transition-colors hover:bg-volt hover:text-ink"
+        >
+          Call 980.220.0908
+        </a>
+      </div>
+
+      <ul class="mt-10 flex flex-wrap gap-x-6 gap-y-2 font-body text-sm font-medium tracking-wide text-cream/70 uppercase">
+        <li class="flex items-center gap-2">
+          <Bolt class="h-3 w-2 text-volt" /> Licensed &amp; Insured
+        </li>
+        <li class="flex items-center gap-2">
+          <Bolt class="h-3 w-2 text-volt" /> Estimates Gladly Given
+        </li>
+        <li class="flex items-center gap-2">
+          <Bolt class="h-3 w-2 text-volt" /> Locally Owned
+        </li>
+      </ul>
+    </div>
+
+    <div class="relative mx-auto w-full max-w-md md:max-w-none">
+      <div class="absolute inset-0 translate-x-4 translate-y-4 rounded-md bg-volt sm:translate-x-6 sm:translate-y-6">
+      </div>
+      <div class="relative overflow-hidden rounded-md border-4 border-cream">
+        <img
+          src="/images/hero-photo.jpg"
+          alt="Matt McKenney installing a ceiling light fixture"
+          class="block h-full w-full object-cover grayscale"
+          width="1600"
+          height="1067"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="absolute inset-0 bg-volt mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-ink/10"></div>
+      </div>
+    </div>
+  </div>
+</section>

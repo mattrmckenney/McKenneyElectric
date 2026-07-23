@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@import "@fontsource/anton";
+@import "@fontsource/kaushan-script";
+@import "@fontsource/oswald/300.css";
+@import "@fontsource/oswald/400.css";
+@import "@fontsource/oswald/500.css";
+@import "@fontsource/oswald/600.css";
+@import "@fontsource/oswald/700.css";
+
+@theme {
+  --color-volt: #ffc700;
+  --color-volt-dark: #e6b200;
+  --color-ink: #171310;
+  --color-ink-soft: #2a231c;
+  --color-cream: #fff6df;
+
+  --font-display: "Anton", "Arial Narrow", sans-serif;
+  --font-script: "Kaushan Script", cursive;
+  --font-body: "Oswald", "Arial Narrow", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+}
+
+.bolt-divider {
+  clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
+}

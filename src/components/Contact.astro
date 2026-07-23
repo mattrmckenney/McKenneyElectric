@@ -1,0 +1,107 @@
+---
+import Bolt from "./Bolt.astro";
+
+// TODO: replace with your real Formspree endpoint ID from https://formspree.io
+const FORMSPREE_ID = "YOUR_FORM_ID";
+---
+
+<section id="contact" class="bg-ink py-20 text-cream">
+  <div class="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 md:grid-cols-2">
+    <div>
+      <p class="font-body text-sm font-semibold tracking-[0.3em] text-volt uppercase">
+        Get In Touch
+      </p>
+      <h2 class="mt-2 font-display text-4xl uppercase sm:text-5xl">
+        Free Estimates
+      </h2>
+      <p class="mt-6 max-w-md font-body text-lg text-cream/80">
+        Tell us what you need and we'll get back to you quickly &mdash; or
+        just call or email directly.
+      </p>
+
+      <div class="mt-8 flex flex-col gap-4 font-body">
+        <a href="tel:9802200908" class="flex items-center gap-3 text-lg font-semibold hover:text-volt">
+          <Bolt class="h-5 w-3.5 shrink-0 text-volt" />
+          980.220.0908
+        </a>
+        <a href="mailto:matt@mckenneyelectric.co" class="flex items-center gap-3 text-lg font-semibold hover:text-volt">
+          <Bolt class="h-5 w-3.5 shrink-0 text-volt" />
+          matt@mckenneyelectric.co
+        </a>
+        <p class="flex items-center gap-3 text-lg font-semibold">
+          <Bolt class="h-5 w-3.5 shrink-0 text-volt" />
+          Charlotte, NC
+        </p>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="absolute inset-0 translate-x-3 translate-y-3 rounded-md bg-volt"></div>
+      <form
+        action={`https://formspree.io/f/${FORMSPREE_ID}`}
+        method="POST"
+        class="relative flex flex-col gap-4 rounded-md border-4 border-cream bg-cream p-6 text-ink sm:p-8"
+      >
+        <div>
+          <label for="name" class="font-body text-sm font-semibold tracking-wide uppercase">
+            Name
+          </label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            required
+            class="mt-1 w-full rounded-sm border-2 border-ink/20 bg-white px-3 py-2 font-body focus:border-ink focus:outline-none"
+          />
+        </div>
+
+        <div>
+          <label for="phone" class="font-body text-sm font-semibold tracking-wide uppercase">
+            Phone
+          </label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            class="mt-1 w-full rounded-sm border-2 border-ink/20 bg-white px-3 py-2 font-body focus:border-ink focus:outline-none"
+          />
+        </div>
+
+        <div>
+          <label for="email" class="font-body text-sm font-semibold tracking-wide uppercase">
+            Email
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            class="mt-1 w-full rounded-sm border-2 border-ink/20 bg-white px-3 py-2 font-body focus:border-ink focus:outline-none"
+          />
+        </div>
+
+        <div>
+          <label for="message" class="font-body text-sm font-semibold tracking-wide uppercase">
+            What do you need done?
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            required
+            class="mt-1 w-full rounded-sm border-2 border-ink/20 bg-white px-3 py-2 font-body focus:border-ink focus:outline-none"
+          ></textarea>
+        </div>
+
+        <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+
+        <button
+          type="submit"
+          class="mt-2 rounded-sm bg-ink px-6 py-3 font-body text-base font-semibold tracking-wide text-volt uppercase transition-colors hover:bg-ink-soft"
+        >
+          Send It
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

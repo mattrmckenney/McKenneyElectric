@@ -1,0 +1,61 @@
+---
+import Bolt from "./Bolt.astro";
+---
+
+<section id="about" class="relative overflow-hidden bg-volt py-20 text-ink">
+  <div class="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 md:grid-cols-2 md:items-center">
+    <div class="relative mx-auto w-full max-w-sm md:order-2">
+      <div class="absolute inset-x-6 bottom-0 h-5/6 rounded-md bg-ink sm:inset-x-10">
+      </div>
+      <img
+        src="/images/matt-cutout.png"
+        alt="Matt McKenney, owner of McKenney Electric Co"
+        class="relative z-10 w-full drop-shadow-xl"
+        width="1200"
+        height="802"
+        loading="lazy"
+      />
+      <img
+        src="/images/seal-badge.jpg"
+        alt=""
+        aria-hidden="true"
+        class="absolute -top-6 -right-4 z-20 h-24 w-24 rotate-12 rounded-full border-4 border-cream shadow-lg sm:h-32 sm:w-32"
+      />
+    </div>
+
+    <div class="md:order-1">
+      <p class="font-body text-sm font-semibold tracking-[0.3em] text-ink/70 uppercase">
+        Est. 1999 &bull; Charlotte, NC
+      </p>
+      <h2 class="mt-2 font-display text-4xl uppercase sm:text-5xl">
+        Locally Owned, <br />Licensed &amp; Insured
+      </h2>
+
+      <p class="mt-6 font-body text-lg text-ink/80">
+        McKenney Electric Co. has been serving Charlotte, NC since 1999. Run
+        by owner Matt McKenney, we're built on one simple idea:{" "}
+        <span class="font-semibold">quality work at affordable prices.</span>
+      </p>
+      <p class="mt-4 font-body text-lg text-ink/80">
+        From a single outlet repair to a full lighting retrofit, every job
+        gets the same hands-on attention &mdash; and estimates and references
+        are always gladly given.
+      </p>
+
+      <ul class="mt-8 grid grid-cols-2 gap-4 font-body text-sm font-semibold tracking-wide uppercase sm:max-w-md">
+        <li class="flex items-center gap-2">
+          <Bolt class="h-4 w-2.5 shrink-0" /> Licensed &amp; Insured
+        </li>
+        <li class="flex items-center gap-2">
+          <Bolt class="h-4 w-2.5 shrink-0" /> Est. 1999
+        </li>
+        <li class="flex items-center gap-2">
+          <Bolt class="h-4 w-2.5 shrink-0" /> Charlotte, NC
+        </li>
+        <li class="flex items-center gap-2">
+          <Bolt class="h-4 w-2.5 shrink-0" /> Family Owned
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

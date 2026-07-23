@@ -1,0 +1,49 @@
+---
+import Bolt from "./Bolt.astro";
+
+const services = [
+  {
+    title: "Electrical Installation & Repair",
+    description:
+      "Wiring, panel work, outlets, fixtures, and troubleshooting for homes and businesses — done safely and built to last.",
+  },
+  {
+    title: "LED & Energy-Efficient Retrofit",
+    description:
+      "Upgrade old, inefficient lighting to modern LED fixtures that cut your energy bill without cutting brightness.",
+  },
+  {
+    title: "Smart Home Upgrades & Service Contracts",
+    description:
+      "Smart switches, outlets, and controls installed right, plus ongoing service contracts to keep everything running.",
+  },
+];
+---
+
+<section id="services" class="bg-cream py-20">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="max-w-2xl">
+      <p class="font-body text-sm font-semibold tracking-[0.3em] text-ink/60 uppercase">
+        What We Do
+      </p>
+      <h2 class="mt-2 font-display text-4xl uppercase sm:text-5xl">
+        Services
+      </h2>
+    </div>
+
+    <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        services.map((service) => (
+          <div class="relative">
+            <div class="absolute inset-0 translate-x-3 translate-y-3 rounded-md bg-volt" />
+            <div class="relative flex h-full flex-col gap-4 rounded-md border-4 border-ink bg-cream p-6">
+              <Bolt class="h-8 w-5 text-ink" />
+              <h3 class="font-display text-2xl uppercase">{service.title}</h3>
+              <p class="font-body text-ink/80">{service.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
