@@ -2,15 +2,15 @@
 import Logo from "./Logo.astro";
 
 const links = [
-  { href: "#services", label: "Services" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#services", label: "Services" },
+  { href: "/#about", label: "About" },
+  { href: "/#contact", label: "Contact" },
 ];
 ---
 
 <header class="sticky top-0 z-50 border-b-4 border-ink bg-volt">
   <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-    <a href="#top" class="text-ink" aria-label="McKenney Electric Co home">
+    <a href="/#top" class="text-ink" aria-label="McKenney Electric Co home">
       <Logo variant="compact" />
     </a>
 
@@ -33,7 +33,7 @@ const links = [
         704.486.9228
       </a>
       <a
-        href="#contact"
+        href="/#contact"
         class="rounded-sm border-2 border-ink bg-ink px-4 py-2 font-body text-sm font-semibold tracking-wide text-volt uppercase transition-colors hover:bg-ink-soft"
       >
         Free Estimate

@@ -28,3 +28,6 @@ pnpm-debug.log*
 
 # local Claude Code permissions, machine-specific
 .claude/settings.local.json
+
+# Private brand guide, not for the public repo
+/docs/
