@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { RECEPTION_WIDGET_EMBED } from "../config";
 
 interface Props {
   title?: string;
@@ -7,8 +8,8 @@ interface Props {
 }
 
 const {
-  title = "McKenney Electric Co | Electrical Installation & Repair in Charlotte, NC",
-  description = "Family-owned electrical contractor serving Charlotte, NC since 1999. Electrical installation & repair, LED and energy-efficient retrofits, and smart home upgrades. Licensed & insured. Call 980.220.0908 for a free estimate.",
+  title = "McKenney Electric Co | Electrical Installation & Repair in Charlotte, NC & Surrounding Areas",
+  description = "Family-owned electrical contractor since 1999, serving Charlotte, Concord, Salisbury, Monroe, and Cabarrus, Mecklenburg & Rowan Counties, NC. Electrical installation & repair, LED and energy-efficient retrofits, and smart home upgrades. Licensed & insured. Call 704.486.9228 for a free estimate.",
 } = Astro.props;
 ---
 
@@ -32,5 +33,6 @@ const {
   </head>
   <body>
     <slot />
+    {RECEPTION_WIDGET_EMBED && <Fragment set:html={RECEPTION_WIDGET_EMBED} />}
   </body>
 </html>

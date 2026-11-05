@@ -1,12 +1,10 @@
 ---
 import Bolt from "./Bolt.astro";
-
-// TODO: replace with your real Formspree endpoint ID from https://formspree.io
-const FORMSPREE_ID = "YOUR_FORM_ID";
+import { RECEPTION_WIDGET_EMBED } from "../config";
 ---
 
 <section id="contact" class="bg-ink py-20 text-cream">
-  <div class="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 md:grid-cols-2">
+  <div class="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 md:grid-cols-2 md:items-center">
     <div>
       <p class="font-body text-sm font-semibold tracking-[0.3em] text-volt uppercase">
         Get In Touch
@@ -15,93 +13,68 @@ const FORMSPREE_ID = "YOUR_FORM_ID";
         Free Estimates
       </h2>
       <p class="mt-6 max-w-md font-body text-lg text-cream/80">
-        Tell us what you need and we'll get back to you quickly &mdash; or
-        just call or email directly.
+        Tell us what you need and we'll take it from there. Reach us whichever
+        way is easiest for you.
       </p>
 
       <div class="mt-8 flex flex-col gap-4 font-body">
-        <a href="tel:9802200908" class="flex items-center gap-3 text-lg font-semibold hover:text-volt">
+        <a href="mailto:contact@mckenneyelectric.co" class="flex items-center gap-3 text-lg font-semibold hover:text-volt">
           <Bolt class="h-5 w-3.5 shrink-0 text-volt" />
-          980.220.0908
-        </a>
-        <a href="mailto:matt@mckenneyelectric.co" class="flex items-center gap-3 text-lg font-semibold hover:text-volt">
-          <Bolt class="h-5 w-3.5 shrink-0 text-volt" />
-          matt@mckenneyelectric.co
+          contact@mckenneyelectric.co
         </a>
         <p class="flex items-center gap-3 text-lg font-semibold">
           <Bolt class="h-5 w-3.5 shrink-0 text-volt" />
-          Charlotte, NC
+          Charlotte &amp; Surrounding Areas
+        </p>
+      </div>
+
+      <div class="mt-8 max-w-md border-t border-cream/20 pt-6 font-body">
+        <h3 class="text-sm font-semibold tracking-[0.3em] text-volt uppercase">
+          Service Area
+        </h3>
+        <p class="mt-3 text-lg font-semibold">
+          Cabarrus, Mecklenburg &amp; Rowan Counties
+        </p>
+        <p class="mt-1 text-cream/80">
+          Charlotte, Concord, Salisbury, Monroe, Pineville, Matthews, China
+          Grove, Rockwell &amp; Landis
         </p>
       </div>
     </div>
 
     <div class="relative">
       <div class="absolute inset-0 translate-x-3 translate-y-3 rounded-md bg-volt"></div>
-      <form
-        action={`https://formspree.io/f/${FORMSPREE_ID}`}
-        method="POST"
-        class="relative flex flex-col gap-4 rounded-md border-4 border-cream bg-cream p-6 text-ink sm:p-8"
-      >
-        <div>
-          <label for="name" class="font-body text-sm font-semibold tracking-wide uppercase">
-            Name
-          </label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            required
-            class="mt-1 w-full rounded-sm border-2 border-ink/20 bg-white px-3 py-2 font-body focus:border-ink focus:outline-none"
-          />
-        </div>
-
-        <div>
-          <label for="phone" class="font-body text-sm font-semibold tracking-wide uppercase">
-            Phone
-          </label>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            class="mt-1 w-full rounded-sm border-2 border-ink/20 bg-white px-3 py-2 font-body focus:border-ink focus:outline-none"
-          />
-        </div>
-
-        <div>
-          <label for="email" class="font-body text-sm font-semibold tracking-wide uppercase">
-            Email
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            class="mt-1 w-full rounded-sm border-2 border-ink/20 bg-white px-3 py-2 font-body focus:border-ink focus:outline-none"
-          />
-        </div>
-
-        <div>
-          <label for="message" class="font-body text-sm font-semibold tracking-wide uppercase">
-            What do you need done?
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            rows="4"
-            required
-            class="mt-1 w-full rounded-sm border-2 border-ink/20 bg-white px-3 py-2 font-body focus:border-ink focus:outline-none"
-          ></textarea>
-        </div>
-
-        <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
-
-        <button
-          type="submit"
-          class="mt-2 rounded-sm bg-ink px-6 py-3 font-body text-base font-semibold tracking-wide text-volt uppercase transition-colors hover:bg-ink-soft"
+      <div class="relative flex flex-col gap-4 rounded-md border-4 border-cream bg-cream p-6 text-ink sm:p-8">
+        <a
+          href="tel:7044869228"
+          class="rounded-sm bg-ink px-6 py-4 text-center font-body text-base font-semibold tracking-wide text-volt uppercase transition-colors hover:bg-ink-soft"
         >
-          Send It
-        </button>
-      </form>
+          Call 704.486.9228
+        </a>
+        {
+          RECEPTION_WIDGET_EMBED && (
+            <a
+              href="tel:7044869228"
+              data-open-chat
+              class="rounded-sm border-2 border-ink px-6 py-4 text-center font-body text-base font-semibold tracking-wide text-ink uppercase transition-colors hover:bg-ink hover:text-volt"
+            >
+              Text Us
+            </a>
+          )
+        }
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+  // elevenlabs-agent:expand is undocumented, so re-test this after widget updates.
+  // If the widget hasn't loaded, the link's tel: href still places a call.
+  document.querySelector("[data-open-chat]")?.addEventListener("click", (event) => {
+    if (!customElements.get("elevenlabs-convai")) return;
+    event.preventDefault();
+    document.dispatchEvent(
+      new CustomEvent("elevenlabs-agent:expand", { detail: { action: "expand" } }),
+    );
+  });
+</script>

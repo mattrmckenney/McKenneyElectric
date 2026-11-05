@@ -15,10 +15,11 @@ npm run preview   # preview the production build locally
 
 ## Before this goes live
 
-1. **Contact form.** `src/components/Contact.astro` posts to Formspree but
-   uses a placeholder ID. Sign up at [formspree.io](https://formspree.io),
-   create a form, and replace `FORMSPREE_ID` near the top of that file with
-   your real form ID.
+1. **Chat widget.** The Reception AI embed code lives in
+   `RECEPTION_WIDGET_EMBED` in `src/config.ts`. Add the live domain to the
+   agent's allowlist and test a voice call and a typed chat.
+2. **Text Us button.** This opens the on-page chat, not SMS, using an
+   undocumented widget event. Re-test it after widget updates.
 
 ## Deploying
 
