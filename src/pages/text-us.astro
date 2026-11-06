@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+  title="Text Us | McKenney Electric Co"
+  description="Text McKenney Electric about your inquiry, including replies, quotes, appointment reminders and job updates."
+>
+  <Nav />
+  <main class="bg-cream px-4 py-14 sm:px-6 sm:py-20">
+    <section
+      id="sms-consent"
+      class="mx-auto max-w-2xl rounded-md border-4 border-ink p-6 font-body text-lg leading-relaxed text-ink sm:p-8"
+    >
+      <h1 class="font-display text-4xl uppercase sm:text-5xl">Text McKenney Electric</h1>
+      <p class="mt-5 text-2xl">
+        <strong>Text us at <a href="sms:+19804997434" class="underline">(980) 499-7434</a></strong>
+      </p>
+      <p class="mt-5">
+        By texting McKenney Electric, LLC at (980) 499-7434, you agree to receive text
+        messages from McKenney Electric about your inquiry, including replies, quotes,
+        appointment reminders and job updates. Message frequency varies.{" "}
+        <strong>Msg &amp; data rates may apply.</strong>{" "}
+        Reply <strong>STOP</strong> to opt out at any time. Reply <strong>HELP</strong> for help.
+        Consent is not a condition of purchase. Not for emergencies.
+      </p>
+      <p class="mt-5 font-semibold">
+        <a href="/terms-and-conditions/" class="underline">SMS Terms &amp; Conditions</a> &middot;{" "}
+        <a href="/privacy-policy/" class="underline">Privacy Policy</a>
+      </p>
+    </section>
+  </main>
+  <Footer />
+</Layout>
