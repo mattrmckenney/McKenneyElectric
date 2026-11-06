@@ -23,8 +23,9 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-# raw design source files (not needed by the deployed site)
-/Images/
+# raw design source files, symlinked from OneDrive (not needed by the deployed site)
+# No trailing slash: a trailing slash would not match a symlink.
+/Images and Media
 
 # local Claude Code permissions, machine-specific
 .claude/settings.local.json
