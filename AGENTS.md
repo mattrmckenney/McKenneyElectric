@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-Marketing site for McKenney Electric Co, a Charlotte, NC electrical contractor. Single-page Astro site styled with Tailwind CSS v4, deployed to GitHub Pages at the custom domain `mckenneyelectric.co`.
+Marketing site for McKenney Electric Co, a Charlotte, NC electrical contractor. The legal name is McKenney Electric, LLC: use it in policy and consent wording, and McKenney Electric Co or McKenney Electric Company for branding. Single-page Astro site styled with Tailwind CSS v4, deployed to GitHub Pages at the custom domain `mckenneyelectric.co`.
 
 ## Commands
 
